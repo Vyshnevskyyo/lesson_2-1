@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 1
+        // Почему код даёт именно такие результаты?
+        var a = 1, b = 1, c, d;
+        c = ++a; console.log(c); // 2  данная операция сразу возвращает значение уже измененной переменной, (т. е. сразу увеличивает на 1)
+        d = b++; console.log(d); // 1  возвращает значение переменной до выполнения инкремента (прироста);
+        c = (2 + ++a); console.log(c); // 5  в примере № 1 сделали прирост переменной 'a' на 1, то-есть получилось 2, в данном примере переменная снова увеличилась на 1, получилось 3, с=(2+3)=5;
+        d = (2 + b++); console.log(d); // 4   в примере № 2 сделали прирост переменной 'b' на 1, то-есть получилось 2, но вывели её значение до прироста, в данном примере снова увеличили переменную на 1, получилось 3, но также вывели её значение до прироста, получилось 2, d=(2+2)=4;
+        console.log(a); // 3  в примере № 3 переменная 'a' выросла до значения 3 (в первом и третьем примерах приростили переменную на 1);
+        console.log(b); // 3  в примере № 4 переменная 'b' выросла до значения 3 (во втором и червёртом примерах приростили переменную на 1);
+    </script>
+
+    <script>
+        // 2
+        // Чему будет равен x в примере ниже?
+        var a = 2;
+        var x = 1 + (a *= 2); // x=5, т. к. (a*=2) == (a=a*2);
+    </script>
+
+
+    <script>
+
+        // 3
+        //Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт,
+        //который работает по следующему принципу:
+        //если a и b положительные, вывести их разность;
+        //если а и b отрицательные, вывести их произведение;
+        //если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+        alert('задание № 3');
+
+        var alpha = 5;
+        var beta = 2;
+        if (alpha >= 0 && beta >= 0) {
+            gamma = alpha - beta;
+            alert(gamma);
+        }
+        else if (alpha < 0 && beta < 0) {
+            gamma = alpha * beta;
+            alert(gamma);
+        }
+        else {
+            gamma = alpha + beta;
+            alert(gamma);
+        }
+    </script>
+
+
+    <script>
+
+        // 4
+        //Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+        alert('задание № 4');
+
+        var a = +prompt('Введите число от 0 до 15:');
+        switch (a) {
+            case 0:
+                alert('Вы ввели 0');
+                break;
+            case 1:
+                alert('Вы ввели 1');
+                break;
+            case 2:
+                alert('Вы ввели 2');
+                break;
+            case 3:
+                alert('Вы ввели 3');
+                break;
+            case 4:
+                alert('Вы ввели 4');
+                break;
+            case 5:
+                alert('Вы ввели 5');
+                break;
+            case 6:
+                alert('Вы ввели 6');
+                break;
+            case 7:
+                alert('Вы ввели 7');
+                break;
+            case 8:
+                alert('Вы ввели 8');
+                break;
+            case 9:
+                alert('Вы ввели 9');
+                break;
+            case 10:
+                alert('Вы ввели 10');
+                break;
+            case 11:
+                alert('Вы ввели 11');
+                break;
+            case 12:
+                alert('Вы ввели 12');
+                break;
+            case 13:
+                alert('Вы ввели 13');
+                break;
+            case 14:
+                alert('Вы ввели 14');
+                break;
+            case 15:
+                alert('Вы ввели 15');
+                break;
+        }
+    </script>
+
+
+    <script>
+
+        // 5
+        //Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
+        //Обязательно использовать оператор return.
+        alert('задание № 5');
+
+        var a = +prompt('Введите первое число:');
+        var b = +prompt('Введите второе число:');
+        function summ(a, b) {
+            return a + b;
+        }
+        var result = summ(a, b);
+        alert('В результате сложения введённых чисел получилось: ' + result);
+
+        function subtraction(a, b) {
+            return a - b;
+        }
+        var result = subtraction(a, b);
+        alert('В результате вычитания введённых чисел получилось: ' + result);
+
+        function prod(a, b) {
+            return a * b;
+        }
+        var result = prod(a, b);
+        alert('В результате умножения введённых чисел получилось: ' + result);
+
+        function div(a, b) {
+            return a / b;
+        }
+        var result = div(a, b);
+        alert('В результате деления введённых чисел получилось: ' + result);
+    </script>
+
+
+    <script>
+
+        //6
+        // Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch).
+        alert('задание № 6');
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case 'сложение':
+                    alert(arg1 + arg2);
+                    break;
+                case 'вычитание':
+                    alert(arg1 - arg2);
+                    break;
+                case 'умножение':
+                    alert(arg1 * arg2);
+                    break;
+                case 'деление':
+                    alert(arg1 / arg2);
+                    break;
+            }
+        }
+        var operation = prompt('Введите математическое действие: (сложение, вычитание, умножение, деление)').toString();
+        var arg1 = +prompt('Введите первое число');
+        var arg2 = +prompt('Введите второе число');
+        //var arg1 = 6;
+        //var arg2 = 3;
+        mathOperation(arg1, arg2, operation)
+    </script>
+
+
+    <script>
+
+        // 7
+        // * Сравнить null и 0. Попробуйте объяснить результат.
+
+        console.log(typeof (null)) //object
+        console.log(typeof (0)) //number
+
+        alert(null > 0);  // false
+        alert(null < 0);  // false
+        alert(null == 0); // false
+        alert(null <= 0); // true
+        alert(null >= 0); // true
+
+        //Сравнения преобразуют 'null' в число и воспринимают его как '0'. Поэтому null <= 0; true, а null > 0; false.
+        //При нестрогом равенстве значение 'null' равняется только значению 'undefined', и не равно ничему другому. Поэтому null == 0; false.
+    </script>
+
+
+    <script>
+
+        // 8
+        // * С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
+        alert('задание № 8');
+
+        function power(val, pow) {
+            if (pow == 1) {
+                return val;
+            } else {
+                return val * power(val, pow - 1);
+            }
+        }
+        var val = +prompt('Введите число, которое желаете возвести в степень:');
+        var pow = +prompt('Введите степень для возведения:');
+
+        alert(power(val, pow));
+    </script>
+
+</body>
+
+</html>
